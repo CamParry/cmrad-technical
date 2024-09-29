@@ -4,9 +4,25 @@ A simple API to manage clinical trial Projects and Subjects
 
 ## How to run the app
 
-1. Clone repo: git clone https://github.com/CamParry/cmrad-technical.git
-2. Run app: php artisan serve
-3. Run tests: php artisan test
+```bash
+
+git clone https://github.com/CamParry/cmrad-technical.git
+
+cd cmrad-technical
+
+composer install
+
+php artisan key:generate
+
+php artisan migrate
+
+php artisan serve
+
+or
+
+php artisan test
+
+```
 
 ## Notes and considerations
 
