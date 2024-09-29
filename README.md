@@ -18,7 +18,11 @@ php artisan migrate
 
 php artisan serve
 
-or
+```
+
+Alternatively you can run the feature test suite with:
+
+```bash
 
 php artisan test
 
@@ -34,25 +38,25 @@ php artisan test
 
 ## API routes
 
-GET /projects
-POST /projects
-GET /projects/{project}
-PUT /projects/{project}
-DELETE /projects/{project}
+-   GET /projects
+-   POST /projects
+-   GET /projects/{project}
+-   PUT /projects/{project}
+-   DELETE /projects/{project}
 
-GET /projects/{project}/subjects
-POST /projects/{project}/subjects
-DELETE /projects/{project}/subjects
+-   GET /projects/{project}/subjects
+-   POST /projects/{project}/subjects
+-   DELETE /projects/{project}/subjects
 
-GET /subjects
-POST /subjects
-GET /subjects/{subject}
-PUT /subjects/{subject}
-DELETE /subjects/{subject}
+-   GET /subjects
+-   POST /subjects
+-   GET /subjects/{subject}
+-   PUT /subjects/{subject}
+-   DELETE /subjects/{subject}
 
-GET /subjects/{subject}/projects
-POST /subjects/{subject}/projects
-DELETE /subjects/{subject}/projects
+-   GET /subjects/{subject}/projects
+-   POST /subjects/{subject}/projects
+-   DELETE /subjects/{subject}/projects
 
 ## Database schemas
 
