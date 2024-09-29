@@ -1,36 +1,63 @@
 # CMRAD Technical
 
--   A simple API to manage clinical trial Projects and Subjects
+A simple API to manage clinical trial Projects and Subjects
 
-## Run app
+## How to run the app
 
-TODO...
+1. Clone repo: git clone https://github.com/CamParry/cmrad-technical.git
+2. Run app: php artisan serve
+3. Run tests: php artisan test
 
-## Entities
+## Notes and considerations
 
-### Projects
+-   While the app is setup to support authentication, I have left the endpoints publicly accessible for simplicity
+-   For this small app I decided to use SQLite for the database
+-   I've created feature tests for all API endpoints using an in memory squlite database and seeded data
+-   I created two endpoints to list all subjects for a project and to list all projects for a subject
+-   I created assignment and unassignment endpoints for both for projects and subjects, this is so that a project can easily have multiple subjects assigned in bulk, and also so a subject can easily be assigned to multiple projects in bulk
 
-CRUD + Assign to subjects by id
+## API routes
+
+GET /projects
+POST /projects
+GET /projects/{project}
+PUT /projects/{project}
+DELETE /projects/{project}
+
+GET /projects/{project}/subjects
+POST /projects/{project}/subjects
+DELETE /projects/{project}/subjects
+
+GET /subjects
+POST /subjects
+GET /subjects/{subject}
+PUT /subjects/{subject}
+DELETE /subjects/{subject}
+
+GET /subjects/{subject}/projects
+POST /subjects/{subject}/projects
+DELETE /subjects/{subject}/projects
+
+## Database schemas
+
+### projects
 
 -   id (primary)
 -   name
--   description (optional)
--   subject_count (calculated)
+-   description (nullable)
 -   timestamps
 
-### Subjects
-
-CRUD + Assign to projects by id
+### subjects
 
 -   id (primary)
--   email
+-   email (unique)
 -   first_name
 -   last_name
 -   timestamps
 
-### ProjectSubject
+### project_subject
 
--   project_id
--   subject_id
+-   project_id (foreign, cascade)
+-   subject_id (foreign, cascade)
 -   timestamps
 -   "project_id, subject_id" (primary)
